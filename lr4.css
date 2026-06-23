@@ -1,0 +1,79 @@
+/* Базове скидання відступів та центрування */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #03030d; /* Глибокий космічний колір */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Контейнер космічного простору */
+.space {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стилізація Землі */
+.earth {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    /* Об'ємний ефект планети за допомогою радіального градієнта */
+    background: radial-gradient(circle at 30% 30%, #3a9efd, #0b3466, #021126);
+    border-radius: 50%;
+    /* Світіння атмосфери та зовнішня тінь */
+    box-shadow: 0 0 25px rgba(58, 158, 253, 0.5), 
+                inset -15px -15px 20px rgba(0, 0, 0, 0.8);
+    z-index: 2; /* Щоб Земля візуально перекривала орбітальну лінію */
+}
+
+/* Лінія орбіти Місяця */
+.moon-orbit {
+    position: absolute;
+    width: 320px; /* Діаметр обертання Місяця */
+    height: 320px;
+    border: 1px dashed rgba(255, 255, 255, 0.12); /* Тонка пунктирна лінія орбіти */
+    border-radius: 50%;
+    z-index: 1;
+    
+    /* Підключення CSS3 анімації */
+    animation: orbit-rotation 15s linear infinite;
+}
+
+/* Стилізація Місяця */
+.moon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 26px;
+    height: 26px;
+    /* Об'ємний ефект за допомогою градієнта */
+    background: radial-gradient(circle at 30% 30%, #f0f0f0, #8a8a8a, #333);
+    border-radius: 50%;
+    /* Центруємо сам Місяць точно по лінії орбіти */
+    transform: translate(-50%, -50%);
+    /* М'яке світіння супутника */
+    box-shadow: 0 0 10px rgba(240, 240, 240, 0.3), 
+                inset -4px -4px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Опис CSS3 анімації обертання */
+@keyframes orbit-rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
