@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Анімація: Орбіта Місяця</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="space">
+        
+        <div class="earth"></div>
+        
+        <div class="moon-orbit">
+            <div class="moon"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
